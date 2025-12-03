@@ -1,6 +1,7 @@
 package com.group8.gymfitnesscenter.Receptionist;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -32,6 +33,10 @@ public class AttendanceCheck
     private TableColumn<AttendanceRecordMC,String> lastcheckincolofattendancerecordtableTv;
     @javafx.fxml.FXML
     private TableColumn<AttendanceRecordMC,String> processedbycolofattendancerecordtableTv;
+    @javafx.fxml.FXML
+    private Label entermemberidlabel;
+    @javafx.fxml.FXML
+    private Label memberidscannedlabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -51,6 +56,15 @@ public class AttendanceCheck
 
     @javafx.fxml.FXML
     public void scanOAbutton(ActionEvent actionEvent) {
+
+        String id = memberidTF.getText();
+
+        if (id.isEmpty()) {
+            System.out.println("Please enter Member ID");
+            return;
+        }
+
+        System.out.println("Member ID scanned");
     }
 
     @javafx.fxml.FXML
@@ -59,5 +73,8 @@ public class AttendanceCheck
 
     @javafx.fxml.FXML
     public void checkinOAbutton(ActionEvent actionEvent) {
+
+
+
     }
 }

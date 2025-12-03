@@ -3,6 +3,7 @@ package com.group8.gymfitnesscenter.Receptionist;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
 
@@ -41,6 +42,22 @@ public class RenewalReminderSystem
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        memberidcolofexpirymemberTV.setCellValueFactory(new PropertyValueFactory<>("Member id"));
+        membernamecolofexpirymemberTV.setCellValueFactory(new PropertyValueFactory<>("Member Name"));
+        phonecolofexpirymemberTV.setCellValueFactory(new PropertyValueFactory<>("Phone"));
+        membershiplancolofexpirymemberTV.setCellValueFactory(new PropertyValueFactory<>("Membership"));
+        expirydatecolofexpirymemberTV.setCellValueFactory(new PropertyValueFactory<>("Expiry date"));
+        reminderstatuscolofexpirymemberTV.setCellValueFactory(new PropertyValueFactory<>("Reminder"));
+        lastreminderdatecolofexpirymemberTV.setCellValueFactory(new PropertyValueFactory<>("Last reminder date"));
+        memberidcolofreminderlogTV.setCellValueFactory(new PropertyValueFactory<>("Member Id "));
+        logidcolofreminderlogTV.setCellValueFactory(new PropertyValueFactory<>("Log ID"));
+        membernamecolofreminderlogTV.setCellValueFactory(new PropertyValueFactory<>("Member name"));
+        reminderdatecolofreminderlogTV.setCellValueFactory(new PropertyValueFactory<>("Reminder date"));
+        methodcolofreminderlogTV.setCellValueFactory(new PropertyValueFactory<>("Method"));
+        statuscolofreminderlogTV.setCellValueFactory(new PropertyValueFactory<>(" status"));
+
+
     }
 
     @javafx.fxml.FXML

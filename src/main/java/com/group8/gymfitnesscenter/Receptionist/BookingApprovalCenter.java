@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
 
@@ -28,6 +29,14 @@ public class BookingApprovalCenter
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        requesteddatecolofbookinginformationtableTV.setCellValueFactory(new PropertyValueFactory<>("Requested DAte "));
+        bookingidcolofbookinginformationtableTV.setCellValueFactory(new PropertyValueFactory<>("Booking Id"));
+        trainercolofbookinginformationtableTV.setCellValueFactory(new PropertyValueFactory<>("Trainer"));
+        statuscolofbookinginformationtableTV.setCellValueFactory(new PropertyValueFactory<>("Status"));
+        memberidcolofbookinginformationtableTV.setCellValueFactory(new PropertyValueFactory<>("Member ID"));
+        membernamecolofbookinginformationtableTV.setCellValueFactory(new PropertyValueFactory<>("Member name"));
+
     }
 
     @javafx.fxml.FXML

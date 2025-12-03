@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
 
@@ -34,6 +35,17 @@ public class AttendanceCheck
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        recordidcolofattendancerecordtableTv.setCellValueFactory(new PropertyValueFactory<>("Record ID "));
+        membernamecolofattendancerecordtableTv.setCellValueFactory(new PropertyValueFactory<>("Member Name"));
+        memberidcolofattendancerecordtableTv.setCellValueFactory(new PropertyValueFactory<>("Member ID"));
+        phonecolofattendancerecordtableTv.setCellValueFactory(new PropertyValueFactory<>("Phone"));
+        startdatecolofattendancerecordtableTv.setCellValueFactory(new PropertyValueFactory<>("Start Date"));
+        expirydatecolofattendancerecordtableTv.setCellValueFactory(new PropertyValueFactory<>("Expiry Date "));
+        lastcheckincolofattendancerecordtableTv.setCellValueFactory(new PropertyValueFactory<>("Last Check in"));
+        lastcheckoutcolofattendancerecordtableTv.setCellValueFactory(new PropertyValueFactory<>("Last Check out"));
+        processedbycolofattendancerecordtableTv.setCellValueFactory(new PropertyValueFactory<>("Processed by "));
+
 
     }
 

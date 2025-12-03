@@ -2,6 +2,7 @@ package com.group8.gymfitnesscenter.Receptionist;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
 
@@ -46,6 +47,17 @@ public class InquiryComplaintDesk
         issuecategoryCB.getItems().addAll("Booking","Check in delay","Checkout issue","Payment issue","Others");
         choosestaffCB.getItems().addAll("Receptionist","Nutritionist","Trainer","Others");
         categoryCB.getItems().addAll("Appoinment Manage","Client registration","Payment");
+
+
+
+        inquiryiidcolofinquirytableTV.setCellValueFactory(new PropertyValueFactory<>("Inquiry ID "));
+        membernamecolofinquirytableTV.setCellValueFactory(new PropertyValueFactory<>("Member Name"));
+        memberidcolofinquirytableTV.setCellValueFactory(new PropertyValueFactory<>("Member ID"));
+        categorycolofinquirytableTV.setCellValueFactory(new PropertyValueFactory<>("Category"));
+        descriptioncolofinquirytableTV.setCellValueFactory(new PropertyValueFactory<>("Description"));
+        assignedtocolofinquirytableTV.setCellValueFactory(new PropertyValueFactory<>("Assigned To"));
+        statuscolofinquirytableTV.setCellValueFactory(new PropertyValueFactory<>("Status"));
+        notecolofinquirytableTV.setCellValueFactory(new PropertyValueFactory<>("Note"));
     }
 
     @javafx.fxml.FXML

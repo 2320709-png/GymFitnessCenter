@@ -2,6 +2,7 @@ package com.group8.gymfitnesscenter.Receptionist;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
 
@@ -53,6 +54,27 @@ public class ClassScheduleManagement
     @javafx.fxml.FXML
     public void initialize() {
         trainerCB.getItems().addAll("Name","Id","Gender");
+
+
+
+        classnamecolofclassscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Class Name "));
+        trainernamecolofclassscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Trainer Name"));
+        datecolofclassscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Date"));
+        starttimecolofclassscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Start Time"));
+        endtimecolofclassscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("End Time"));
+        capacitycolofclassscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Capacity"));
+        statuscolofclassscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Status"));
+        classnamecoloftraineravailabilityscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Class Name "));
+        trainernamecoloftraineravailabilityscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Trainer Name"));
+        availablefromcoloftraineravailabilityscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Available From"));
+        availableuntilcoloftraineravailabilityscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Available util"));
+        existingclassescoloftraineravailabilityscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Existing status"));
+        availabilitystatuscoloftraineravailabilityscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Availability status"));
+        datecoloftraineravailabilityscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Date "));
+
+
+
+
     }
 
     @javafx.fxml.FXML

@@ -2,26 +2,34 @@ package com.group8.gymfitnesscenter.Nutritionist;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.time.LocalDate;
 
 public class HealthAlerts
 {
     @javafx.fxml.FXML
-    private ComboBox clientselectionCB;
+    private ComboBox<String> clientselectionCB;
     @javafx.fxml.FXML
-    private TableColumn dateaddedcolofclientwithallergyproblemprofileTV;
+    private TableColumn<clientwithallergyproblemprofileTable, LocalDate> dateaddedcolofclientwithallergyproblemprofileTV;
     @javafx.fxml.FXML
     private TextArea descriptionTextArea;
     @javafx.fxml.FXML
-    private TableColumn allergycolofclientwithallergyproblemprofileTV;
+    private TableColumn<clientwithallergyproblemprofileTable,String> allergycolofclientwithallergyproblemprofileTV;
     @javafx.fxml.FXML
-    private TableColumn descriptioncolofclientwithallergyproblemprofileTV;
+    private TableColumn<clientwithallergyproblemprofileTable,String> descriptioncolofclientwithallergyproblemprofileTV;
     @javafx.fxml.FXML
     private TextField allergynameTextField;
     @javafx.fxml.FXML
-    private TableView clientwithallergyproblemprofileTV;
+    private TableView<clientwithallergyproblemprofileTable> clientwithallergyproblemprofileTV;
 
     @javafx.fxml.FXML
     public void initialize() {
+        clientselectionCB.getItems().addAll("Client ID","Client name ","Gender");
+
+        dateaddedcolofclientwithallergyproblemprofileTV.setCellValueFactory(new PropertyValueFactory<>("Date Added"));
+        allergycolofclientwithallergyproblemprofileTV.setCellValueFactory(new PropertyValueFactory<>("Allergy"));
+        descriptioncolofclientwithallergyproblemprofileTV.setCellValueFactory(new PropertyValueFactory<>("description"));
     }
 
     @javafx.fxml.FXML

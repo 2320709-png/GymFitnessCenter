@@ -4,32 +4,47 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+import java.time.LocalDate;
 
 public class ClientEatingHabit
 {
     @javafx.fxml.FXML
-    private TableColumn caloriescolofclientsfoodlogTV;
+    private TableColumn<clientfoodlog,Integer> caloriescolofclientsfoodlogTV;
     @javafx.fxml.FXML
-    private TableColumn matchorunmatchcolofcomparisonTV;
+    private TableColumn<comparisonTable,String> matchorunmatchcolofcomparisonTV;
     @javafx.fxml.FXML
-    private TableColumn mealcolofclientsfoodlogTV;
+    private TableColumn<clientfoodlog,String> mealcolofclientsfoodlogTV;
     @javafx.fxml.FXML
     private TextArea entercommentsTextArea;
     @javafx.fxml.FXML
-    private TableColumn datecolofclientsfoodlogTV;
+    private TableColumn<clientfoodlog, LocalDate> datecolofclientsfoodlogTV;
     @javafx.fxml.FXML
-    private TableView clientsfoodlogTV;
+    private TableView<clientfoodlog> clientsfoodlogTV;
     @javafx.fxml.FXML
-    private TableView comparisonTV;
+    private TableView<comparisonTable> comparisonTV;
     @javafx.fxml.FXML
-    private TableColumn notescolofclientsfoodlogTV;
+    private TableColumn<comparisonTable,String> notescolofclientsfoodlogTV;
     @javafx.fxml.FXML
-    private TableColumn foodcolofcomparisonTV;
+    private TableColumn<comparisonTable,String> foodcolofcomparisonTV;
     @javafx.fxml.FXML
-    private TableColumn dietplancolofcomparisonTV;
+    private TableColumn<comparisonTable,String> dietplancolofcomparisonTV;
 
     @javafx.fxml.FXML
     public void initialize() {
+        datecolofclientsfoodlogTV.setCellValueFactory(new PropertyValueFactory<>("Date"));
+        mealcolofclientsfoodlogTV.setCellValueFactory(new PropertyValueFactory<>("Meal"));
+        caloriescolofclientsfoodlogTV.setCellValueFactory(new PropertyValueFactory<>("Calories"));
+        notescolofclientsfoodlogTV.setCellValueFactory(new PropertyValueFactory<>("Notes"));
+        foodcolofcomparisonTV.setCellValueFactory(new PropertyValueFactory<>("Food"));
+        dietplancolofcomparisonTV.setCellValueFactory(new PropertyValueFactory<>("Diet plan"));
+        matchorunmatchcolofcomparisonTV.setCellValueFactory(new PropertyValueFactory<>("Match/Not match"));
+
+
+
+
+
     }
 
     @javafx.fxml.FXML

@@ -2,24 +2,30 @@ package com.group8.gymfitnesscenter.Nutritionist;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class DietReminders
 {
     @javafx.fxml.FXML
     private TextArea remindermessageTextArea;
     @javafx.fxml.FXML
-    private TableView clientlistTV;
+    private TableView<clientListTable> clientlistTV;
     @javafx.fxml.FXML
-    private TableColumn clientnameofclientlistTV;
+    private TableColumn<clientListTable,String> clientnameofclientlistTV;
     @javafx.fxml.FXML
     private DatePicker scheduleDatePicker;
     @javafx.fxml.FXML
-    private ComboBox clientselectionCB;
+    private ComboBox<String>clientselectionCB;
     @javafx.fxml.FXML
-    private TableColumn clientidofclientlistTV;
+    private TableColumn<clientListTable,Integer> clientidofclientlistTV;
 
     @javafx.fxml.FXML
     public void initialize() {
+        clientselectionCB.getItems().addAll("Client ID","Client name ","Gender");
+        clientnameofclientlistTV.setCellValueFactory(new PropertyValueFactory<>("Client name"));
+        clientidofclientlistTV.setCellValueFactory(new PropertyValueFactory<>("Client ID"));
+
+
     }
 
     @javafx.fxml.FXML

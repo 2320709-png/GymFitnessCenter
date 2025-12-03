@@ -5,24 +5,31 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class TrainerConsultration
 {
     @javafx.fxml.FXML
-    private TableColumn quantitycolofclientsdietplanTV;
+    private TableColumn<clientdietplanTable,Double> quantitycolofclientsdietplanTV;
     @javafx.fxml.FXML
-    private TableColumn mealcolofclientsdietplanTV;
+    private TableColumn<clientdietplanTable,String> mealcolofclientsdietplanTV;
     @javafx.fxml.FXML
-    private TableColumn notescolofclientsdietplanTV;
+    private TableColumn<clientdietplanTable,String> notescolofclientsdietplanTV;
     @javafx.fxml.FXML
-    private ComboBox clientselectionCB;
+    private ComboBox<String> clientselectionCB;
     @javafx.fxml.FXML
     private TextArea trainerfeedbackTextArea;
     @javafx.fxml.FXML
-    private TableView clientsdietplanTV;
+    private TableView<clientdietplanTable> clientsdietplanTV;
 
     @javafx.fxml.FXML
     public void initialize() {
+        clientselectionCB.getItems().addAll("Client ID","Client name ","Gender");
+        quantitycolofclientsdietplanTV.setCellValueFactory(new PropertyValueFactory<>("Quantity"));
+        mealcolofclientsdietplanTV.setCellValueFactory(new PropertyValueFactory<>("Meal "));
+        notescolofclientsdietplanTV.setCellValueFactory(new PropertyValueFactory<>("Notes"));
+
+
     }
 
     @javafx.fxml.FXML

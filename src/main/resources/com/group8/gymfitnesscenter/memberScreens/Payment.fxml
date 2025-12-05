@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="450.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.group8.gymfitnesscenter.Lamia.Member.PaymentController">
+
+    <children>
+
+        <Label layoutX="150.0" layoutY="40.0"
+               style="-fx-font-size: 26; -fx-font-weight: bold;"
+               text="Membership Payment" />
+
+        <Label layoutX="155.0" layoutY="100.0"
+               style="-fx-font-size: 16;"
+               fx:id="expireLabel"
+               text="Your membership expires in: 16 days" />
+
+        <Label layoutX="242.0" layoutY="140.0" text="Choose Plan:" />
+        <ComboBox fx:id="paymentType" layoutX="185.0" layoutY="160.0" prefWidth="200">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Monthly - $25" />
+                    <String fx:value="Quarterly - $65" />
+                    <String fx:value="Yearly - $200" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- NEW: Card / Bank Details -->
+        <Label layoutX="220.0" layoutY="210.0" text="Payment Details:" />
+
+        <TextField fx:id="cardNumberField" layoutX="185.0" layoutY="235.0"
+                   promptText="Card Number / Bank Acc" prefWidth="200" />
+
+        <PasswordField fx:id="cvvField" layoutX="185.0" layoutY="270.0"
+                       promptText="CVV / PIN" prefWidth="200" />
+
+        <Button layoutX="223.0" layoutY="320.0"
+                onAction="#payButton"
+                style="-fx-background-color: #00e676; -fx-text-fill: white; -fx-font-weight: bold;
+                       -fx-padding: 10 30; -fx-background-radius: 8;"
+                text="Pay Now" />
+
+        <Button layoutX="482.0" layoutY="28.0"
+                onAction="#goBack"
+                text="Back" />
+
+    </children>
+</AnchorPane>

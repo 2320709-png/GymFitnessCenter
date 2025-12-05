@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="415.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group8.gymfitnesscenter.Lamia.Member.RegisterController">
+
+   <children>
+
+      <Label layoutX="40.0" layoutY="30.0" style="-fx-font-size: 22px; -fx-font-weight: bold;" text="Register Member" />
+
+      <TextField fx:id="nameField" layoutX="40.0" layoutY="74.0" promptText="Full Name" />
+      <TextField fx:id="ageField" layoutX="40.0" layoutY="117.0" promptText="Age" />
+      <TextField fx:id="weightField" layoutX="40.0" layoutY="160.0" promptText="Weight (kg)" />
+      <TextField fx:id="emailField" layoutX="40.0" layoutY="203.0" promptText="Email" />
+      <TextField fx:id="phoneField" layoutX="40.0" layoutY="246.0" promptText="Phone Number" />
+
+
+      <PasswordField fx:id="passwordField" layoutX="40.0" layoutY="289.0" promptText="Password" />
+
+      <Label layoutX="316.0" layoutY="147.0" text="Select Membership:" />
+      <ComboBox fx:id="membershipBox" layoutX="316.0" layoutY="180.0">
+         <items>
+            <FXCollections fx:factory="observableArrayList">
+               <String fx:value="Monthly - $25" />
+               <String fx:value="Quarterly - $65" />
+               <String fx:value="Yearly - $200" />
+            </FXCollections>
+         </items>
+      </ComboBox>
+
+      <Button layoutX="316.0" layoutY="223.0" onAction="#handleRegister" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 16px;" text="Register" />
+
+      <Label fx:id="statusLabel" layoutX="40.0" layoutY="457.0" textFill="red" />
+   </children>
+</AnchorPane>

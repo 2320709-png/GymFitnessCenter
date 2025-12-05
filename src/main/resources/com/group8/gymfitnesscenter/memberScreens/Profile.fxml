@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group8.gymfitnesscenter.Lamia.Member.ProfileController">
+   <children>
+   
+          <Label layoutX="197.0" layoutY="40.0" style="-fx-font-size: 26; -fx-font-weight: bold;" text="Member Profile" />
+
+              <Label layoutX="132.0" layoutY="103.0" text="Name:" />
+        <TextField fx:id="nameField" layoutX="266.0" layoutY="98.0" promptText="Enter name" />
+
+              <Label layoutX="132.0" layoutY="149.0" text="Age:" />
+        <TextField fx:id="ageField" layoutX="266.0" layoutY="144.0" />
+
+              <Label layoutX="132.0" layoutY="195.0" text="Weight (kg):" />
+        <TextField fx:id="weightField" layoutX="266.0" layoutY="190.0" />
+   
+          <Button layoutX="223.0" layoutY="287.0" onAction="#saveProfile" style="-fx-background-color: #4db8ff; -fx-text-fill: white; -fx-padding: 10 25;                    -fx-font-size: 14; -fx-background-radius: 8;" text="Update Profile" />
+      <Button layoutX="429.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="77.0" text="back" />
+   </children>
+</AnchorPane>

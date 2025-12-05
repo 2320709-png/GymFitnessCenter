@@ -34,10 +34,12 @@ public class HealthAlerts
 
     @javafx.fxml.FXML
     public void saveregistrationOAbutton(ActionEvent actionEvent) {
+
     }
 
     @javafx.fxml.FXML
     public void loadprofileOAbutton(ActionEvent actionEvent) {
+        clientwithallergyproblemprofileTV.getItems().clear();
     }
 
     @javafx.fxml.FXML

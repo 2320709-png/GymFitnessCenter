@@ -38,10 +38,14 @@ public class NutritionWorkshop
 
     @javafx.fxml.FXML
     public void createscheduleOAbutton(ActionEvent actionEvent) {
+        workshopTextField.clear();
+        timeTextField.clear();
+        desciptionTextArea.clear();
     }
 
     @javafx.fxml.FXML
     public void saveattendanceOAbutton(ActionEvent actionEvent) {
+        participantsdetailsTV.getSelectionModel().clearSelection();
     }
 
     @javafx.fxml.FXML
@@ -50,6 +54,7 @@ public class NutritionWorkshop
 
     @javafx.fxml.FXML
     public void addparticipantOAbutton(ActionEvent actionEvent) {
+        clientselectionCB.getSelectionModel().clearSelection();
     }
 
     @javafx.fxml.FXML

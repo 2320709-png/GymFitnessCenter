@@ -34,21 +34,30 @@ public class TrainerConsultration
 
     @javafx.fxml.FXML
     public void savefeedbackvalidityOAbutton(ActionEvent actionEvent) {
+
+        trainerfeedbackTextArea.setPromptText("Feedback validated.");
     }
 
     @javafx.fxml.FXML
     public void loadplanOAbutton(ActionEvent actionEvent) {
+
+        clientsdietplanTV.getItems().clear();
+        trainerfeedbackTextArea.clear();
     }
 
     @javafx.fxml.FXML
     public void savefeedbackOAbutton(ActionEvent actionEvent) {
+        trainerfeedbackTextArea.setPromptText("Feedback saved successfully.");
     }
 
     @javafx.fxml.FXML
     public void updateplanOAbutton(ActionEvent actionEvent) {
+        trainerfeedbackTextArea.setPromptText("Diet plan updated with trainer feedback.");
     }
 
     @javafx.fxml.FXML
     public void sharewithtrainerOAbutton(ActionEvent actionEvent) {
+
+        trainerfeedbackTextArea.setPromptText("Feedback requested from trainer...");
     }
 }

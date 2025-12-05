@@ -1,6 +1,7 @@
 package com.group8.gymfitnesscenter.Nutritionist;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -30,6 +31,8 @@ public class ClientEatingHabit
     private TableColumn<comparisonTable,String> foodcolofcomparisonTV;
     @javafx.fxml.FXML
     private TableColumn<comparisonTable,String> dietplancolofcomparisonTV;
+    @javafx.fxml.FXML
+    private Label statusLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -57,6 +60,7 @@ public class ClientEatingHabit
 
     @javafx.fxml.FXML
     public void updateprogressOAbutton(ActionEvent actionEvent) {
+        statusLabel.setText("Progress updated!");
     }
 
     @Deprecated
@@ -65,6 +69,7 @@ public class ClientEatingHabit
 
     @javafx.fxml.FXML
     public void savecommentOAbutton(ActionEvent actionEvent) {
+        statusLabel.setText("Comment saved!");
     }
 
     @javafx.fxml.FXML

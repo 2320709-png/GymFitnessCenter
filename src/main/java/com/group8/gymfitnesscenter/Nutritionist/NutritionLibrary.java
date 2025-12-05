@@ -42,14 +42,31 @@ public class NutritionLibrary
 
     @javafx.fxml.FXML
     public void addnewrecipeOAbutton(ActionEvent actionEvent) {
+        recipenameTextField.clear();
+        caloriesTextField.clear();
+        ingrediantsTextArea.clear();
+        instructionTextArea.clear();
+        mealtypeCB.getSelectionModel().clearSelection();
     }
 
     @javafx.fxml.FXML
     public void saveOAbutton(ActionEvent actionEvent) {
+
+        recipenameTextField.clear();
+        caloriesTextField.clear();
+        ingrediantsTextArea.clear();
+        instructionTextArea.clear();
+        mealtypeCB.getSelectionModel().clearSelection();
     }
 
     @javafx.fxml.FXML
     public void cancelOAbutton(ActionEvent actionEvent) {
+
+        recipenameTextField.clear();
+        caloriesTextField.clear();
+        ingrediantsTextArea.clear();
+        instructionTextArea.clear();
+        mealtypeCB.getSelectionModel().clearSelection();
     }
 
     @javafx.fxml.FXML

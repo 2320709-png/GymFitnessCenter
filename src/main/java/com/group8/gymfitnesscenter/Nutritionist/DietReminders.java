@@ -18,6 +18,8 @@ public class DietReminders
     private ComboBox<String>clientselectionCB;
     @javafx.fxml.FXML
     private TableColumn<clientListTable,Integer> clientidofclientlistTV;
+    @javafx.fxml.FXML
+    private Label statusLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -30,10 +32,13 @@ public class DietReminders
 
     @javafx.fxml.FXML
     public void addtoreminderlistOAbutton(ActionEvent actionEvent) {
+        statusLabel.setText("Client added to reminder list.");
+
     }
 
     @javafx.fxml.FXML
     public void sendreminderOAbutton(ActionEvent actionEvent) {
+        statusLabel.setText("Reminder sent to client(s).");
     }
 
     @javafx.fxml.FXML

@@ -62,10 +62,17 @@ public class InquiryComplaintDesk
 
     @javafx.fxml.FXML
     public void forwardOAbutton(ActionEvent actionEvent) {
+
+        InquiryInformationMC selected = inquirytableTV.getSelectionModel().getSelectedItem();
+        if (selected != null && choosestaffCB.getValue() != null) {
+            selected.(choosestaffCB.getValue());
+            inquirytableTV.refresh();
     }
 
     @javafx.fxml.FXML
     public void updatestatusOAbutton(ActionEvent actionEvent) {
+
+        }
     }
 
     @javafx.fxml.FXML

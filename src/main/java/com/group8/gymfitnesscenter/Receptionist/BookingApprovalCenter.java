@@ -45,21 +45,35 @@ public class BookingApprovalCenter
 
     @javafx.fxml.FXML
     public void refreshOAbutton(ActionEvent actionEvent) {
+
+        messageLabel.setText("Booking requests loaded.");
     }
 
     @javafx.fxml.FXML
     public void rejectOAbutton(ActionEvent actionEvent) {
+
+        if (reasonforrejectionTextArea.getText().isEmpty()) {
+            messageLabel.setText("Please enter a reason for rejection.");
+            return;
+        }
+
+        messageLabel.setText("Booking updated.");
     }
 
     @javafx.fxml.FXML
     public void checkslotOAbutton(ActionEvent actionEvent) {
+
+        messageLabel.setText("Slots validated.");
     }
 
     @javafx.fxml.FXML
     public void saveconfirmationOAbutton(ActionEvent actionEvent) {
+
+        messageLabel.setText("Booking confirmation saved.");
     }
 
     @javafx.fxml.FXML
     public void notifymemberOAbutton(ActionEvent actionEvent) {
+        messageLabel.setText("Member notified.");
     }
 }

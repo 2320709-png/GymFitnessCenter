@@ -6,8 +6,10 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class AttendanceCheck
 {
@@ -34,9 +36,15 @@ public class AttendanceCheck
     @javafx.fxml.FXML
     private TableColumn<AttendanceRecordMC,String> processedbycolofattendancerecordtableTv;
     @javafx.fxml.FXML
-    private Label entermemberidlabel;
-    @javafx.fxml.FXML
     private Label memberidscannedlabel;
+    @javafx.fxml.FXML
+    private Label currenttimelabel;
+    @javafx.fxml.FXML
+    private Label checkoutstatuslabel;
+    @javafx.fxml.FXML
+    private AnchorPane entermemberidlabel;
+    @javafx.fxml.FXML
+    private Label checkinstatuslabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -57,22 +65,33 @@ public class AttendanceCheck
     @javafx.fxml.FXML
     public void scanOAbutton(ActionEvent actionEvent) {
 
-        String id = memberidTF.getText();
-
-        if (id.isEmpty()) {
-            System.out.println("Please enter Member ID");
+        if (memberidTF.getText().isEmpty()){
+            memberidscannedlabel.setText("Enter Member ID");
             return;
         }
+        memberidscannedlabel.setText("Member ID scanned: " + memberidTF.getText());
+        entermemberidlabel.setText("Enter Member ID");
 
-        System.out.println("Member ID scanned");
+
     }
 
     @javafx.fxml.FXML
     public void checkoutOAbutton(ActionEvent actionEvent) {
+        if(memberidTF.getText().isEmpty()){
+            checkoutstatuslabel.setText("Enter Member ID first");
+            return;
+        }
+        checkoutstatuslabel.setText("Check-out confirmed at " + LocalTime.now());
     }
 
     @javafx.fxml.FXML
     public void checkinOAbutton(ActionEvent actionEvent) {
+
+        if(memberidTF.getText().isEmpty()){
+            checkinstatuslabel.setText("Enter Member ID first");
+            return;
+        }
+        checkinstatuslabel.setText("Check-in confirmed at " + LocalTime.now());
 
 
 

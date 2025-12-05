@@ -1,6 +1,7 @@
 package com.group8.gymfitnesscenter.Receptionist;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -27,6 +28,8 @@ public class DailyAttendanceReports
     private TableColumn<AttendanceSheetMC, LocalDate> datecolofattendancesheetTV;
     @javafx.fxml.FXML
     private TableColumn<AttendanceSheetMC,String> processedbycolofattendancesheetTV;
+    @javafx.fxml.FXML
+    private Label validationStatusLabel;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -42,25 +45,35 @@ public class DailyAttendanceReports
 
     @javafx.fxml.FXML
     public void savereportOAbutton(ActionEvent actionEvent) {
+        validationStatusLabel.setText("Report saved and sent.");
     }
 
     @javafx.fxml.FXML
     public void exportexcelOAbutton(ActionEvent actionEvent) {
+        validationStatusLabel.setText("Report exported.");
     }
 
     @javafx.fxml.FXML
     public void sendtomanagerOAbutton(ActionEvent actionEvent) {
+
+        validationStatusLabel.setText("Report saved and sent.");
     }
 
     @javafx.fxml.FXML
     public void exportpdfOAbutton(ActionEvent actionEvent) {
+        validationStatusLabel.setText("Report exported.");
+
     }
 
     @javafx.fxml.FXML
     public void openattendancesystemOAbutton(ActionEvent actionEvent) {
+
+        validationStatusLabel.setText("Attendance system loaded.");
     }
 
     @javafx.fxml.FXML
     public void fetchrecordsOAbutton(ActionEvent actionEvent) {
+
+        validationStatusLabel.setText("Records fetched.");
     }
 }

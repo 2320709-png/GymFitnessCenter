@@ -1,5 +1,7 @@
 package com.group8.gymfitnesscenter.Receptionist;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -50,7 +52,7 @@ public class ClassScheduleManagement
     private TableColumn<ClassScheduleMC,String> endtimecolofclassscheduletableTV;
     @javafx.fxml.FXML
     private TableColumn<TrainerAvailabilityScduleMC,String> availabilitystatuscoloftraineravailabilityscheduletableTV;
-
+    private ObservableList<ClassScheduleMC> classList = FXCollections.observableArrayList();
     @javafx.fxml.FXML
     public void initialize() {
         trainerCB.getItems().addAll("Name","Id","Gender");
@@ -72,13 +74,18 @@ public class ClassScheduleManagement
         availabilitystatuscoloftraineravailabilityscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Availability status"));
         datecoloftraineravailabilityscheduletableTV.setCellValueFactory(new PropertyValueFactory<>("Date "));
 
-
+        classscheduletableTV.setItems(classList);
 
 
     }
 
     @javafx.fxml.FXML
     public void publishscheduleOAbutton(ActionEvent actionEvent) {
+
+        for (ClassScheduleMC cls : classList) {
+            cls.setStatus("Published");
+        }
+        classscheduletableTV.refresh();
     }
 
     @javafx.fxml.FXML
@@ -87,9 +94,30 @@ public class ClassScheduleManagement
 
     @javafx.fxml.FXML
     public void openscheduleOAbutton(ActionEvent actionEvent) {
+
+        classList.add(new ClassScheduleMC(
+                classnameTF.getText(),
+                trainerCB.getValue(),
+                dateDatePicker.getValue(),
+                startandendtimeTF.getText(),
+                startandendtimeTF.getText(),
+                Integer.parseInt(capacityTF.getText()),
+                "Open"
+        ));
+        // Clear fields
+        classnameTF.clear();
+        startandendtimeTF.clear();
+        capacityTF.clear();
+        trainerCB.setValue(null);
+        dateDatePicker.setValue(null);
     }
 
     @javafx.fxml.FXML
     public void checkavailabilityOAbutton(ActionEvent actionEvent) {
+
+        for (ClassScheduleMC cls : classList) {
+            cls.setStatus("Available");
+        }
+        classscheduletableTV.refresh();
     }
 }

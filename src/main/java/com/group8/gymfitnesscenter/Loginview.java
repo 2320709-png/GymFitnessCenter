@@ -1,5 +1,9 @@
 package com.group8.gymfitnesscenter;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
 public class Loginview
 {
     @javafx.fxml.FXML

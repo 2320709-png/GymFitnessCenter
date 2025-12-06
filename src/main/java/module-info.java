@@ -14,6 +14,5 @@ module com.group8.gymfitnesscenter {
     opens com.group8.gymfitnesscenter.Lamia.Member to javafx.fxml;
     exports com.group8.gymfitnesscenter.Lamia.Trainer;
     opens com.group8.gymfitnesscenter.Lamia.Trainer to javafx.fxml;
-    exports com.group8.gymfitnesscenter.salesManager;
-    opens com.group8.gymfitnesscenter.salesManager to javafx.fxml;
+
 }
